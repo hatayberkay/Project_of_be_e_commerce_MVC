@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Entities.products>
+
+
+@*@{
+    ViewBag.Title = "brands";
+}
+
+<h2>categories</h2>
+
+@{
+
+    // Split the url to make better queries.
+    string[] tokens = Url.RouteUrl(ViewContext.RouteData.Values).Split('/');
+
+
+}
+
+
+<div class="row text-center">
+    @foreach (var item in Model)
+    {
+
+        if (tokens[3].ToString().Equals(item.categories_id.ToString()))
+        {
+    <div class="col-lg-4 center">
+        <h2>@item.brand_name</h2>
+        <p>@item.brand_description</p>
+        <p><a class="btn btn-secondary" href="/Home/categories/@tokens[3]/@item.Id/product/">Details</a></p>
+    </div>
+               
+                }
+
+
+                }
+            </div>*@
+
+
+
+@{
+    ViewBag.Title = "Products";
+}
+<body style="background-color: #133161; ">
+
+</body>
+
+
+
+@{
+
+    // Split the url to make better queries.
+    string[] tokens = Url.RouteUrl(ViewContext.RouteData.Values).Split('/');
+
+
+}
+
+
+<div class="row text-center">
+    @foreach (var item in Model)
+    {
+
+        if (tokens[3].ToString().Equals(item.categories_id.ToString()))
+        {
+    <div class="col-lg-4 center">
+        <img src="~/Img/@item.photo" alt="" height="150" />
+        <h2>@item.product_name</h2>
+        <p>@item.product_description</p>
+        <p><a class="btn btn-secondary" href="/Home/product_detail/@item.Id">Details</a></p>
+    </div>
+               
+                }
+
+
+                }
+            </div>
+

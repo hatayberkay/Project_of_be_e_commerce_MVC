@@ -1,0 +1,148 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+<div class="container m-5">
+
+    <div class="row">
+        <div class="col">
+
+            <h2>@ViewBag.Title.</h2>
+            <h3>@ViewBag.Message</h3>
+
+
+
+
+            <address>
+                Adress:<br />
+                Bulgurlu Mahallesi, Mavi Marmara Sok. ,<br />
+                Phone number:<br />
+                +90 530 450 02 47<br />
+
+            </address>
+
+            <address>
+                <strong>Support:</strong>   <a href="mailto:hatayberkay1234@gmail.com">hatayberkay1234@gmail.com</a><br />
+                <strong>Marketer:</strong> <a href="mailto:hatayberkay1234@gmail.com">hatayberkay1234@gmail.com</a>
+            </address>
+
+
+
+
+
+        </div>
+        @*<div class="col">
+
+                <form method="post">
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Your Email Adress</label>
+                        <input type="email" name="email" class="form-control" id="Email" aria-describedby="emailHelp">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Adi" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="Adi" name="Adi" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Soyadi" class="form-label">Your Surname</label>
+                        <input type="text" class="form-control" id="Soyadi" name="Soyadi" placeholder="">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Mesaj" class="form-label">Message</label>
+                        <textarea class="form-control" id="Mesaj" name="Mesaj" rows="3" required></textarea>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" onclick="iletisim_formu()">Gönder</button>
+
+                </form>
+
+            </div>
+        </div>*@
+
+
+
+
+
+        @*<div class="alert alert-success" id="sonuc" style="display:none"></div>
+        @{ if (IsPost)
+            {
+                if (TempData["Mesaj"] != null)
+                {
+                    <hr />
+                    <div class="alert alert-info">@TempData["Mesaj"]</div> }
+
+            } }
+
+    </div>
+
+
+@section scripts{
+    <script>
+
+        function iletisim_formu() {
+            var email = $("#Email").val();
+            var adi = $("#Adi").val();
+            var soyadi = $("#Soyadi").val();
+            var mesaj = $("#Mesaj").val();
+
+            var message = {
+                "email": email,
+                "adi": adi,
+                "soyadi": soyadi,
+                "mesaj": mesaj
+
+            };
+
+            $.ajax({
+                method: "POST",
+                url: "/Home/Contact",
+                type: "json",
+                data: message ,
+                success: function (data) {
+                    document.getElementById("iletisim formu").reset();
+                    $("#sonuc").show().html("Mesajınız gonderildi").delay("5000").fadeOut();
+                },
+                error: function (err) {
+                    alert("Hata Olustu!");
+                }
+
+
+            });
+
+
+        }
+
+
+    </script>
+
+}*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+
+    <address>
+        One Microsoft Way<br />
+        Redmond, WA 98052-6399<br />
+        <abbr title="Phone">P:</abbr>
+        425.555.0100
+    </address>
+
+    <address>
+        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>*@

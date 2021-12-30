@@ -1,0 +1,158 @@
+﻿@model Entities.products
+@{
+    ViewBag.Title = "product_detail";
+}
+
+
+<body style="background-color: #133161; ">
+
+</body>
+
+
+<div class="container m-5">
+
+    <div class="row">
+        <div class="col">
+
+
+
+
+            <img src="~/Img/@Model.photo" alt="" class="img-thumbnail" />
+
+
+        </div>
+        <div class="col">
+
+
+
+            <h2>@Model.product_name</h2>
+            <p></p>
+            <p>@(( Model.product_fee * (100 + Model.tax))/100 ) TL (All taxes included.)</p>
+
+            <p>@Model.number_of_products Left</p>
+
+            <p>@Model.product_description</p>
+            <p><a class="btn btn" href="~/Home/Contact">Get it</a></p>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>
+
+<style>
+    .btn {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .col {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #0e8d96;
+        padding-top: 100px;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="container">
+        <h2>@Model.product_name Product Description</h2>
+
+        <div class="col-lg-10">
+            <img src="~/Img/@Model.photo" alt="" class="img-thumbnail" />
+            <h2>@Model.product_name</h2>
+            <p>@Model.product_fee TL</p>
+            <p>@Model.product_description</p>
+            <p><a class="btn btn" href="~/Home/Contact">Get it</a></p>
+        </div>
+    </div>*@
+
+
+@*<div class="row">
+        <div class="column" style="width:100%">
+            <img src="~/Img/@Model.photo" class="img-thumbnail">
+        </div>
+
+        <div class="column" style="width:100%">
+            <h2>@Model.product_name</h2>
+            <p>@Model.product_fee TL</p>
+            <p>@Model.product_description</p>
+            <p><a class="btn btn" href="~/Home/Contact">Get it</a></p>
+
+        </div>
+
+    </div>
+    <style>
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+       text-align: center;
+            text-decoration: none;
+
+
+        }
+    </style>*@
+
+@*<div class='container2'>
+        <div>
+            <img src='~/Img/@Model.photo' class='img-thumbnail' >
+        </div>
+        <div style='margin-left:60px;'>
+            <h4>Facebook</h4>
+            <div style="font-size:.6em">fine location, GPS, coarse location</div>
+            <div style="float:right;font-size:.6em">0 mins ago</div>
+        </div>
+    </div>
+    <style>
+
+        .iconDetails {
+            margin-left: 2%;
+            float: left;
+            height: 40px;
+            width: 40px;
+        }
+
+        .container2 {
+            width: 100%;
+            height: auto;
+            padding: 1%;
+        }
+
+    </style>*@
